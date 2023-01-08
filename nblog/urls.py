@@ -18,7 +18,7 @@ urlpatterns = [
     path('newhatchtech.html',views.site, name='newhatchtech'),
     path('aboutme.html',views.aboutme,name='aboutme'),
     path('subscribe/', views.subscribe, name='subscribe_newsletter'),
-    path('comments/', include('django_comments_xtd.urls'), name='comment'),
+    path('comments/', include('django_comments_xtd.urls'), name='comments'),
     path('paypal/', include('paypal.standard.ipn.urls')),
     path('home1/', views.home1, name="home1"),
     path('feli.html',views.feli,name='feli'),

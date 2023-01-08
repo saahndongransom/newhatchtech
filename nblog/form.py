@@ -49,6 +49,8 @@ class CommentForm(forms.ModelForm):
         fields = ('content', )
         
 
+def get_absolute_url(self):
+    return reverse("comment", kwargs={"pk": self.pk})
    
 
 class PostForm(forms.ModelForm):

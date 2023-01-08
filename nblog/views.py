@@ -177,14 +177,14 @@ def newsletter(request):
     form.fields['receivers'].initial = ','.join([active.email for active in SubscribedUsers.objects.all()])
     return render(request=request, template_name='nblog/newsletter.html', context={'form': form})
 
-def get_context_data(self, **kwargs):
+def get_content_data(self, **kwargs):
         similar_posts = self.object.tags.similar_objects()[:3]
         post_comments_count = Comment.objects.all().filter(post=self.object.id).count()
         post_comments = Comment.objects.all().filter(post=self.object.id)
-        context = self.super().get_context_data(**kwargs)
-        context.update({
+        content = self.super().get_content_data(**kwargs)
+        content.update({
             "similar_posts":similar_posts,
-            'form': self.form,
+            'form': self.forms,
             'post_comments': post_comments,
             'post_comments_count': post_comments_count,
         })
@@ -192,6 +192,9 @@ def get_context_data(self, **kwargs):
 
         return context
 
+
+def get_absolute_url(self):
+    return reverse("comment", kwargs={"pk": self.pk})
 def home1(request):
    return render(request,'nblog/home1.html',{'home1':home1})
 
