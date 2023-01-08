@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nblog',
-    'ckeditor',
+    #'ckeditor',
     'paypal.standard.ipn',
     'crispy_forms',
     'tinymce',
