@@ -190,7 +190,7 @@ def get_content_data(self, **kwargs):
         })
 
 
-        return context
+        return content
 
 
 def get_absolute_url(self):

@@ -4,10 +4,8 @@
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
-      <div class=" col-md-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h3 class=" site-heading my-4 mt-3 text-black"> Welcome to My Blog ✍️ </h3>
-          <p class="text-dark">Newhatch is Awesome ✨✨✨ </p>
+      <div class=" col-md-8 col-md-15 mx-auto">
+        <div class="site-heading1">
         </div>
       </div>
     </div>
@@ -22,7 +20,7 @@
         <div class="card-body">
           <h2 class="card-title">{{ post.title }}</h2>
           <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-          <p class="card-text">{{post.content|slice:":200"}}</p>
+          <p class="card-text">{{post.content|slice:":300"|safe}}</p>
           <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
         </div>
       </div>

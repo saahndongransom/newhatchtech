@@ -1,4 +1,8 @@
 {% block content %}
+{% load static %}
+
+
+<link rel="stylesheet"  href="{%  static  'css/nav-item.css'  %}">
 <footer class="bg-dark text-center text-white">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
@@ -19,31 +23,46 @@
                     <div class="col-md-5 col-12">
                         <!-- Email input -->
                         <div class="form-outline form-white mb-4">
-                            <input type="email" id="form5Example2" class="form-control" name="email" />
-                            <label class="form-label" for="form5Example2">Email address</label>
+                            
+                                <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
+                            
+                            <!-- <input type= "email" id="form5Example2" class="form-control" placeholder="Email address " name="email"  />-->  
+                            <!--<label class="form-label" for="form5Example2">Email address</label>--> 
+                            <br>
+                            
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <!--Grid column-->
                     <!--Grid column-->
-                    <div class="col-auto">
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-outline-light mb-4">
-                            Subscribe
-                        </button>
-                    </div>
+     
                     <section>
-                        <i class='fab fa-whatsapp' style='font-size:20px'> (237)650473572</i><br>
-                        <i class="fa fa-envelope" aria-hidden="true"> saahndongransom@gmail.com</i>
+                        
+                        <i class="fa fa-envelope" aria-hidden="true" style="font-size: 20px;font-weight: 200;"> saahndongransom@gmail.com</i>
+                        <br>
+                        <br>
+                        <i class='fab fa-whatsapp'aria-hidden="true" style="font-size:20px;font-weight: 200;"> (237)650473572</i>
+                        <br>
+                        <br>
+        
                         <div class="social">
                             <ul>
-                                <li style="display:inline"><a href="https://web.facebook.com/saah.ransomm"><i class="fab fa-facebook-f "
+                                <span><li style="display:inline"><a href="https://web.facebook.com/saah.ransomm"target="_blank"><i class="fab fa-facebook-f "
+                                            style="font-size: 25px;color: whitesmoke;"></i></a></li></span>
+                                            
+                                <li style="display:inline"><a href="https://twitter.com/SaahndongRansom"target="_blank"><i class="fab fa-twitter"
                                             style="font-size: 25px;color: whitesmoke;"></i></a></li>
-                                <li style="display:inline"><a href="https://twitter.com/SaahndongRansom"><i class="fab fa-twitter"
+                                            
+                                <li style="display:inline"><a href="https://github.com/saahndongransom"target="_blank" ><i class="fab fa-github"
                                             style="font-size: 25px;color: whitesmoke;"></i></a></li>
-                                <li style="display:inline"><a href="https://github.com/saahndongransom"><i class="fab fa-github"
-                                            style="font-size: 25px;color: whitesmoke;"></i></a></li>
-                                <li style="display:inline"><a href="#"><i class="fab fa-youtube"
-                                            style="font-size: 25px;color: whitesmoke;"></i></a></li>
+                            
+                               <strong> <li style="display:inline"><a href="#"target="_blank"><i class="fab fa-youtube"
+                                            style="font-size: 25px;color: whitesmoke;"></i></a></li></strong>
                     </section>
                     <!--Grid column-->
                 </div>

@@ -2,14 +2,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet"  href="{%  static  'css/feli.css'  %}">
-	 <link rel="stylesheet" href="feli.css" />
-    <script src="https://kit.fontawesome.com/1cf483120b.js" crossorigin="anonymous"></script>
+
+
 	  
     <title>about me </title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="{%  static  'css/feli.css'  %}">
+     <link rel="stylesheet" href="feli.css" />
+      <script src="https://kit.fontawesome.com/1cf483120b.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body style="background-image: url('{%static 'images/f1.jpg' %}');">
@@ -68,9 +71,10 @@
     <p>A professional  cook. Just kidding, I would love to be a full-time <strong>security  administrative</strong> who's given an array of responsibilities in comanpany, bloger, CEO , and whatever else comes my way.</p>
 
     <h5>What music have you been listening to lately?</h5>
-    <p>I  love listening  Catholic Gospel   <a href="https://www.youtube.com/watch?v=3qWaru5fu-M">CAMEROON HYMM</a>.  and Naira marley I don't know what it is about naira marley songs , but they make me want to keep driving and driving. Start with the song <a href="https://www.youtube.com/results?search_query=naira+marley+compilation">"naira mar"</a> first.</p>
+    <p>I  love listenin<a href="{% url 'newsletter' %}">g</a>  Catholic Gospel   <a href="https://www.youtube.com/watch?v=3qWaru5fu-M">CAMEROON HYMM</a>.  and Naira marley I don't know what it is about naira marley songs , but they make me want to keep driving and driving. Start with the song <a href="https://www.youtube.com/results?search_query=naira+marley+compilation">"naira mar"</a> first.</p>
     </div>
     <h5>thanks</h5>
+    
     			<footer class="content-footer">
     <div class="footer-container">
     <p>Say hi to me on these social networks:</p>

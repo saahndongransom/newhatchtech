@@ -1,9 +1,14 @@
 {% load static %}
 {% block sidebar %}
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet"  href="{%  static  'css/side.css'  %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   .card {
     box-shadow: 0 16px 48px #6a6a6b;
+    position:-webkit-sticky ;
   }
 </style>
 
@@ -14,7 +19,7 @@
     <div class="card-body">
       <p class="card-text"> NEWHATCH tech is a technology start-up that it's primary focus is in transforming our selves from just  being a   piece of creature to be a creator our selves by creating what we really care for because we are the creator in many ways. </p>
       <a href="newhatchtech.html" class="btn btn-danger">Visit Website!</a>
-      <a href="https://www.linkedin.com/in/saahndong-ransom-7b3ba41b3/" class="btn btn-secondary">Newhatch -linkedin</a>
+      <a href="https://www.linkedin.com/in/saahndong-ransom-7b3ba41b3/" class="btn btn-secondary"target="_blank">Newhatch -linkedin</a>
     </div>
   </div> 
 
@@ -22,8 +27,85 @@
   
   <a href="feli.html"><img src="{% static 'images/anna.png' length %}"></a>
 </div><!-- end image-->
-<!-- writes out the form tag automatically -->
+<section style="background-color:darkgrey ;">
+  <div class="profile">
+  
+    <a href="feli.html"><img src="{% static 'images/ransom.jpeg' length %}"></a>
+  
+      
+      <h3 style="color: black;" class="one">Saahndong Ransom</h3>
+      <p class="one">Developer</p>
+      <hr class="t">
+      <hr style="color: yellow;">
+  </div>
+  <ul>
+    <li>
+        <a href="#" class="active">
+            <span class="icon"><i class="fas fa-home"></i></span>
+            <span class="item">Home</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="icon"><i class="fas fa-desktop"></i></span>
+            <span class="item">My Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="icon"><i class="fas fa-user-friends"></i></span>
+            <span class="item">People</span>
+        </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+        <span class="item">Perfomance</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-database"></i></span>
+        <span class="item">Development</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-chart-line"></i></span>
+        <span class="item">Reports</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-user-shield"></i></span>
+        <span class="item">Admin</span>
+    </a>
+  </li>
+  <li>
+      <a href="#">
+          <span class="icon"><i class="fas fa-cog"></i></span>
+          <span class="item">Settings</span>
+      </a>
+  </li>
+</ul>
+<h1>ff</h1>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br><br>
+<br>
+</div>
+
+</section>
+
+<div class="image">
+  
+  <a href="feli.html"><img src="{% static 'images/anna.png' length %}"></a>
+</div><!-- end image-->
 </div>
 
 
