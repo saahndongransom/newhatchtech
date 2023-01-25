@@ -1,5 +1,16 @@
 {% extends "nblog/base.html" %}
+{% load static %}
 {% block content %}
+<style>
+  .layout-container {
+  display: grid;
+  grid-template-columns: auto 15%;
+  /*grid-template-columns: auto 300px;*/
+  grid-column-gap: 10px;
+  background-color: darkgrey;
+}
+</style>
+
 <header class="masthead">
   <div class="overlay"></div>
   <div class="container">
@@ -23,6 +34,7 @@
           <p class="card-text">{{post.content|slice:":300"|safe}}</p>
           <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
         </div>
+
       </div>
       {% endfor %}
    

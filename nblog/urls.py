@@ -26,9 +26,7 @@ urlpatterns = [
     path('paypal-cancel/', views.paypal_cancel,name='paypal-cancel'),
     #path('users/', include('users.urls')),
     #path('',views.home1, name='home1'),
-
-
-
+    
     #path('process-payment/', views.process_payment, name='process_payment'),
 
 

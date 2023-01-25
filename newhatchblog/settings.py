@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django_comments',
     'taggit',
     'django_social_share',
+    
 
 
 

@@ -26,6 +26,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from paypal.standard.forms import PayPalPaymentsForm
+from django.db.models import Q
 
 #from .decorators import user_is_superuser
 
@@ -197,4 +198,28 @@ def get_absolute_url(self):
     return reverse("comment", kwargs={"pk": self.pk})
 def home1(request):
    return render(request,'nblog/home1.html',{'home1':home1})
+
+
+def searchposts(request):
+    if request.method == 'GET':
+        query= request.GET.get('q')
+
+        submitbutton= request.GET.get('submit')
+
+        if query is not None:
+            lookups= Q(title__icontains=query) | Q(content__icontains=query)
+
+            results= Post.objects.filter(lookups).distinct()
+
+            context={'results': results,
+                     'submitbutton': submitbutton}
+
+            return render(request, 'search/search.html', context)
+
+        else:
+            return render(request, 'search/search.html')
+
+    else:
+        return render(request, 'search/search.html')
+
 
