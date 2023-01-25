@@ -156,16 +156,41 @@ PAYPAY_RECEIVES_EMAIL ='saahndongransom@gmail.com'
 SITE_ID = 1
 COMMENTS_APP = 'django_comments_xtd'
 
-COMMENTS_XTD_MAX_THREAD_LEVEL = 2
+COMMENTS_XTD_MAX_THREAD_LEVEL = 3
 
-COMMENTS_XTD_CONFIRM_EMAIL = False
+COMMENTS_XTD_CONFIRM_EMAIL =False
+#  To help obfuscating comments before they are sent for confirmation.
+COMMENTS_XTD_SALT = (b"Timendi causa est nescire. "
+                     b"Aequam memento rebus in arduis servare mentem.")
+
+# Source mail address used for notifications.
+COMMENTS_XTD_FROM_EMAIL = "saahndongransom@gmail.com"
+
+# Contact mail address to show in messages.
+COMMENTS_XTD_CONTACT_EMAIL = "helpdesk@example.com"
+COMMENTS_XTD_MAX_THREAD_LEVEL = 1  # default is 0
+COMMENTS_XTD_LIST_ORDER = ('-thread_id', 'order')  # default is ('thread_id', 'order')
+COMMENTS_XTD_MAX_THREAD_LEVEL = 0  # site wide default
+COMMENTS_XTD_MAX_THREAD_LEVEL_BY_APP_MODEL = {
+    # Objects of the app blog, model post, can be nested
+    # up to thread level 1.
+        'nblog.post': 1,
+}
+COMMENTS_XTD_APP_MODEL_OPTIONS = {
+    'default': {
+        'allow_flagging': False,
+        'allow_feedback': False,
+        'show_feedback': False,
+        'who_can_post': 'all'  # Valid values: 'all', users'
+    }
+}
 
 # Either enable sending mail messages to the console:
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # or smpt EmailBackend
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Or set up the EMAIL_* settings so that Django can send emails:
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'

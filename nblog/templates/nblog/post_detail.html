@@ -90,9 +90,12 @@
  
     <!-- Posted comment list - This code will show the POSTED COMMENTS -->
     {% if comment_count %}
-        <ul class="media-list shadow p-3 mb-5 bg-white rounded container">
+       <!--- <ul class="media-list shadow p-3 mb-5 bg-white rounded container">
         {% render_xtdcomment_tree for object %}
-        </ul>
+        </ul> -->
+        <ul class="media-list">
+            {% render_xtdcomment_tree for object allow_flagging allow_feedback %}
+          </ul>
     {% endif %}
      <!-- Post your comment - This code will show the FORM TO POST COMMENTS -->
      <div class="comment mt-3 shadow p-3 mb-5 bg-white rounded container">
@@ -100,8 +103,10 @@
       <div class="card pt-4">
           {% render_comment_form for object %}
 
-          <a href="{{ post.get_absolute_url }}">
+          <a href="{{ post.get_absolute_url }}"></a>
+          
       </div>
+      
   </div>
  
       </div>
@@ -115,6 +120,6 @@
 </div>
 
 
- 
+
 
 {% endblock content %}

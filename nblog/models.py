@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.urls import reverse
 from taggit.managers import TaggableManager
 import readtime
+from django_comments_xtd.models import XtdComment
 
 
 
@@ -37,8 +38,10 @@ class Post(models.Model):
 
     # this method is the default human-readable representation of the object. Django will use it in many places
     # such as the admin panel
-    def __str__(self):
-        return self.title
+    #def __str__(self):
+     #   return self.title
+    #def get_absolute_url(self):
+    # return reverse("comments", kwargs={"pk": self.pk})
 
 class Comment(models.Model):
     Post = models.ForeignKey(Post,related_name="comments", on_delete=models.CASCADE)
@@ -75,3 +78,9 @@ class Order(models.Model):
 def get_readtime(self):
     result = readtime.of_text(self.content)
     return result.text
+
+#class CustomComment(models.Model):
+    #page =Parentalkey(Post, on_delete=models.CASCADE ,releted_name="constomcomments")
+    #def save(safe,*args,**kwargs):
+       # safe.post =Post.objects.get(pk=safe.object_pk)
+      #  super(CustomComment,safe).save(*args,**kwargs)

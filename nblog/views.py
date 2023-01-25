@@ -221,5 +221,8 @@ def searchposts(request):
 
     else:
         return render(request, 'search/search.html')
+    
+def reply(request):
+   return render(request,'nblog/reply.html',{'reply':reply})
 
-
+    
