@@ -38,8 +38,8 @@ class Post(models.Model):
 
     # this method is the default human-readable representation of the object. Django will use it in many places
     # such as the admin panel
-    #def __str__(self):
-     #   return self.title
+    def __str__(self):
+        return self.title
     #def get_absolute_url(self):
     # return reverse("comments", kwargs={"pk": self.pk})
 
