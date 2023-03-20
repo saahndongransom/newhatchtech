@@ -9,7 +9,7 @@
   .card {
     box-shadow: 0 16px 48px #6a6a6b;
     position:-webkit-sticky ;
-
+    p
 </style>
 <style>  
   .im1{
@@ -42,6 +42,39 @@
       .im11{
         align-items: left;
       }
+      <style>
+    .related-posts {
+  font-size: 1.2em;
+  margin-top: 2em;
+}
+
+.related-posts__title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.related-posts__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.related-posts__item {
+  margin-bottom: 0.5em;
+}
+
+.related-posts__link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.related-posts__link:hover {
+  text-decoration: underline;
+}
+
+
+      </style>
     </style>
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4 float-right ">
@@ -49,8 +82,8 @@
     <h5 class="card-header">About</h5>
     <div class="card-body">
       <p class="card-text"> NEWHATCH tech is a technology start-up that it's primary focus is in transforming our selves from just  being a   piece of creature to be a creator our selves by creating what we really care for because we are the creator in many ways. </p>
-      <a href="newhatchtech.html" class="btn btn-danger" target="_blank">Visit Website!</a>
-      <a href="https://www.linkedin.com/in/saahndong-ransom-7b3ba41b3/" class="btn btn-secondary"target="_blank">Newhatch -linkedin</a>
+      <a href="mission.html" class="btn btn-danger" target="_blank">Visit Website!</a>
+      <a href="https://www.linkedin.com/in/saahndong-ransom-7b3ba41b3/" class="btn btn-secondary"target="_blank">-linkedin</a>
     </div>
   </div> 
 
@@ -64,25 +97,35 @@
 <section>
   <body>
    <div>
-      <h1>Features posts</h1>
+      <h1 style="color: grey;">Features posts</h1>
     </div>
-  
+
+
     <h3 style="color: white;">Natural beauty. which is grateful in Cameroon.</h3>
     <img src="https://images.pexels.com/photos/257840/pexels-photo-257840.jpeg?cs=srgb&dl=agriculture-apple-blur-257840.jpg&fm=jpg" alt="">
     <p style="color:white ;">14th februry, 2023</p>
     <p style="color: white;">One morning,e found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. hhhhhhhhhhhhhhhhhhhhhhhhh</p>
     <p><a style="color:red ;" href="">Read More</a></p>
+
+      
+
     <u><p><a href="">Creative Process and Ways to Enhance Creativity</a></p></u>
     <u><p><a href="">What Is the Inspiration Behind Creativity?</a></p></u>
     <u><p><a href="">my Perspective on Art and it impact</a></p></u>
     <u><p><a href="">The Real Definition of the Word “Creativity”</a></p></u>
-    <u><p><a href="">Can Creativity be developed or is an inherent traits?</a></p></u>
-    <u><p><a href="">Can Anxiety Fuel Creativity? </a></p></u>
-    <u><p><a href="">how to be Creative;3 reliable method that can fail  </a></p></u>
+    <h2 style="color: red;">similar_posts</h2>
     
+    {% if related_posts %}
+      
+      <ul style="font-size: 1.2em;">
+        {% for related_post in related_posts %}
+          <li><a href="{{ related_post.get_absolute_url }}">{{ related_post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     <p><hr style="color: red;"></p>
      <div class="layout-container">
-      <main>
+      <main style="color: antiquewhite;">
         Hi there! i am <b>Saahndong Ransom</b> I have published 100+ blog posts on life style, mind, catholic faith, django and other related topics. When I am not coding, I enjoy reading, hiking and listening to catholic hymm.
       </main>
       <div class="image">

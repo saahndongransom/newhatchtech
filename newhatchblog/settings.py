@@ -43,13 +43,13 @@ INSTALLED_APPS = [
     'crispy_forms',
     'tinymce',
     'django.contrib.sites',
-
-    # django_comments_xtd and django_comments order should be same
-    'django_comments_xtd',
-    'django_comments',
-    'taggit',
     'django_social_share',
-    
+    'taggit',
+  #  'crispy_bootstrap5',
+   # 'crispy_forms_bootstrap5',
+     'nblog.templatetags', 
+   # 'reading_time',
+   #'wagtail-readingtime',
 
 
 
@@ -63,10 +63,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     
 ]
 
-ROOT_URLCONF = 'newhatchblog.urls'
+'crispy_forms.context_processors.crispy_forms'
+'crispy_forms.context_processors.form_errors'
 
+
+ROOT_URLCONF = 'newhatchblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -80,14 +84,23 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+               
+                
+
             ],
+
+            'builtins': [
+                'bootstrap4.templatetags.bootstrap4',
+            ]
         },
     },
 ]
 
+
 WSGI_APPLICATION = 'newhatchblog.wsgi.application'
 
-
+# Import crispy_forms
+import crispy_forms
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -153,51 +166,20 @@ PAYPAY_RECEIVES_EMAIL ='saahndongransom@gmail.com'
 
 
 
-SITE_ID = 1
-COMMENTS_APP = 'django_comments_xtd'
-
-COMMENTS_XTD_MAX_THREAD_LEVEL = 3
-
-COMMENTS_XTD_CONFIRM_EMAIL =False
-#  To help obfuscating comments before they are sent for confirmation.
-COMMENTS_XTD_SALT = (b"Timendi causa est nescire. "
-                     b"Aequam memento rebus in arduis servare mentem.")
-
-# Source mail address used for notifications.
-COMMENTS_XTD_FROM_EMAIL = "saahndongransom@gmail.com"
-
-# Contact mail address to show in messages.
-COMMENTS_XTD_CONTACT_EMAIL = "helpdesk@example.com"
-COMMENTS_XTD_MAX_THREAD_LEVEL = 1  # default is 0
-COMMENTS_XTD_LIST_ORDER = ('-thread_id', 'order')  # default is ('thread_id', 'order')
-COMMENTS_XTD_MAX_THREAD_LEVEL = 0  # site wide default
-COMMENTS_XTD_MAX_THREAD_LEVEL_BY_APP_MODEL = {
-    # Objects of the app blog, model post, can be nested
-    # up to thread level 1.
-        'nblog.post': 1,
-}
-COMMENTS_XTD_APP_MODEL_OPTIONS = {
-    'default': {
-        'allow_flagging': False,
-        'allow_feedback': False,
-        'show_feedback': False,
-        'who_can_post': 'all'  # Valid values: 'all', users'
-    }
-}
-
 # Either enable sending mail messages to the console:
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # or smpt EmailBackend
 
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# Or set up the EMAIL_* settings so that Django can send emails:
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'saahndongransom@gmail.com'
-EMAIL_HOST_PASSWORD = 'ymsezdinahtijcly'
-DEFAULT_FROM_EMAIL = "Helpdesk <helpdesk@yourdomain>"
+EMAIL_HOST_PASSWORD = 'qwckzejwbbufuven'
+DEFAULT_FROM_EMAIL = 'saahndongransom@gmail.com'
+
 
 
 
@@ -210,3 +192,18 @@ TEMPLATE_LOADERS = (
 )
 
 ALLOWED_HOSTS = ['*']
+SITE_ID=1
+
+APPEND_SLASH = False
+
+
+# settings.py
+
+...
+
+# crispy forms settings
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+

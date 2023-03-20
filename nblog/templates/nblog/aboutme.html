@@ -12,7 +12,7 @@
     <link rel="stylesheet"  href="{%  static  'css/feli.css'  %}">
      <link rel="stylesheet" href="feli.css" />
       <script src="https://kit.fontawesome.com/1cf483120b.js" crossorigin="anonymous"></script>
-    
+    	<script src="{% static 'myfirst.js' %}"></script>
 </head>
 
 <body style="background-image: url('{%static 'images/f1.jpg' %}');">
@@ -23,7 +23,12 @@
     		<article>
           <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}"><i  class="fa " style="font-size:24px"></i></a>
     			<h1>About me</h1>
-    			
+    		
+
+
+<button onclick="myFunction()">Click me!</button>
+
+<p>In myfirst.js you can see the myFunction function.</p>
 				<div class="image">
 					<img src="{% static 'images/ransom.jpeg' length %}">
 				</div><!-- end image-->

@@ -1,45 +1,61 @@
 {% extends 'nblog/base.html'%}
 {% block content %}
-
 <style>
-        .container{
-             padding-top: 15px;
-        }
+  form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  
+}
 
-    #id_name{
-        width:100%
-        }
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-    #id_message{
-        width:100%
-        }
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-    #id_email{
-        width:100%
-        }
+textarea {
+  height: 200px;
+}
+
+input[type="submit"] {
+  width: 150px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
 </style>
 
-<div class="container ">
-    <h2>Send Me a Message</h2>
-    <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-       
-
-        {% for hidden in form.hidden_fields %}
-        {{ hidden }}
-        {% endfor %}
-
-        {% for field in form.visible_fields %}
-        <div class="form-group">
-            {{ field.errors }}
-            <label>{{ field.label_tag }}</label>
-            <p>{{ field }}</p>
-        </div>
-        {% endfor %}
-        <button type="reset" class="btn btn-secondary">Reset</button>
-         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+  <h1>Contact Us</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Send">
+  </form>
 
 
 {% endblock content %}

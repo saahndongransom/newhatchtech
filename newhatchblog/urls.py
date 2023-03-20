@@ -20,11 +20,12 @@ from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', include('nblog.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('paypal/', include('paypal.standard.ipn.urls')),
+ 
     
 ]
 

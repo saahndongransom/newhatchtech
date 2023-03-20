@@ -1,14 +1,16 @@
 {% extends "nblog/base.html" %}
 {% load static %}
+
 {% block content %}
+<link rel="stylesheet"  href="{%  static  'css/page.css'  %}">
 <style>
   .layout-container {
-  display: grid;
-  grid-template-columns: auto 15%;
-  /*grid-template-columns: auto 300px;*/
-  grid-column-gap: 10px;
-  background-color: darkgrey;
-}
+    display: grid;
+    grid-template-columns: auto 15%;
+    /*grid-template-columns: auto 300px;*/
+    grid-column-gap: 10px;
+    background-color: darkgrey;
+  }
 </style>
 
 <header class="masthead">
@@ -25,26 +27,71 @@
 <div class="container">
   <div class="row">
     <!-- Blog Entries Column -->
-    <div class="col-md-8 mt-3 left">
-      {% for post in post_list %}
-      <div class="card mb-4">
+    
+     <div class="col-md-12">
+            <h1>Posts in "{{ category.name }}" category</h1>
+        </div>
+        {% for post in page_obj %}
+        {% endfor %}
+    <div class="col-md-8 mt-3 left" id="content">
+      {% for post in posts %}
+      <div class="card mb-4 single_content">
         <div class="card-body">
           <h2 class="card-title">{{ post.title }}</h2>
-          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-          <p class="card-text">{{post.content|slice:":300"|safe}}</p>
-          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-        </div>
+      
 
+          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+          {% if post.image %}
+          <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        {% endif %}
+          <p class="card-text">{{post.content|slice:":300"|safe}}</p>
+          <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary">Read More &rarr;</a>
+        </div>
       </div>
       {% endfor %}
-   <br>
-   
+      {% if related_posts %}
+      <h3>Related Posts</h3>
+      
+      <ul>
+          {% for post in related_posts %}
+              <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+  
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      {% if page_obj.has_previous %}
+      <nav class="pagination-nav">
+        <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">
+          <span class="pagination-icon">&laquo;</span>
+          <h2 class="pagination-label">Previous p</h2>
+        </a>
+      </nav>
+      {% endif %}
+
+      {% if page_obj.has_next %}
+      <nav class="pagination-nav">
+        <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">
+          <h2 class="pagination-label">Next </h2>
+          <span class="pagination-icon">&raquo;</span>
+        </a>
+      </nav>
+      {% endif %}
+     
     </div>
-    
-    {% block sidebar %} 
-    {% include 'nblog/sidebar.html' %} 
-    
-    {% endblock sidebar %}
   </div>
 </div>
-{%endblock%}
+
+    
+    </div>
+   
+  
+    {% block sidebar %} 
+      {% include 'nblog/sidebar.html' %} 
+    {% endblock sidebar %}
+   
+  </div>
+</div>
+{% endblock content %}
